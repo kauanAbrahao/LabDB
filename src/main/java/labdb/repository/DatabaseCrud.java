@@ -1,4 +1,4 @@
-package labdb.labdb.repository;
+package labdb.repository;
 
 public class DatabaseCrud {
 
