@@ -39,11 +39,11 @@ public class CriptomoedaController {
     }
 
     @RequestMapping(path = {"/edit", "/edit/{id}"})
-    public String editCriptoById(Model model, @PathVariable("id")Optional<Long> idCripto){
+    public String editCriptoById(Model model, @PathVariable("id")Optional<String> idCripto){
         if (idCripto.isPresent()){
             //TODO
-//            service.buscaAcriptomoeda();
-//            model.addAttribute("criptomoeda", criptomoeda);
+            Criptomoeda criptomoeda = criptomoedaService.buscaAcriptomoeda(idCripto);
+            model.addAttribute("criptomoeda", criptomoeda);
         } else {
             model.addAttribute(new Criptomoeda());
         }

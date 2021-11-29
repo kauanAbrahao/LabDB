@@ -7,6 +7,9 @@ public class DatabaseCrud {
             case "buscarCriptomoedas":
                 return "SELECT * FROM tab_cripto";
 
+            case "buscarPorID":
+                return "SELECT * FROM tab_cripto WHERE ID_Cripto = :ID_Cripto";
+
             case "insertCriptomoedas":
                 return "INSERT INTO tab_cripto VALUES (:ID_Cripto, :Nome_Cripto, :MKT_Cap_Rank, :Symbol)";
 
