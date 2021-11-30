@@ -27,4 +27,8 @@ public class CriptomoedaService {
         List<Criptomoeda> criptomoeda = crudSelect.getOne(id.get());
         return criptomoeda.get(0);
     }
+
+    public void updateCriptomoeda(Criptomoeda criptomoeda){
+        crudSelect.updateOne(criptomoeda);
+    }
 }

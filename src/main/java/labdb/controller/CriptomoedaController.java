@@ -35,6 +35,7 @@ public class CriptomoedaController {
     public String updateOrAddCripto(Criptomoeda criptomoeda){
         //TODO
         //service.fazAporraDoInsertOuUpdate();
+        criptomoedaService.updateCriptomoeda(criptomoeda);
         return "redirect:/";
     }
 

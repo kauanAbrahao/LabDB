@@ -5,13 +5,16 @@ public class DatabaseCrud {
     public String getSql(String query){
         switch (query){
             case "buscarCriptomoedas":
-                return "SELECT * FROM tab_cripto";
+                return "SELECT * FROM tab_cripto;";
 
             case "buscarPorID":
-                return "SELECT * FROM tab_cripto WHERE ID_Cripto = :ID_Cripto";
+                return "SELECT * FROM tab_cripto WHERE ID_Cripto = :ID_Cripto;";
 
             case "insertCriptomoedas":
                 return "INSERT INTO tab_cripto VALUES (:ID_Cripto, :Nome_Cripto, :MKT_Cap_Rank, :Symbol)";
+
+            case "updateCriptomoedas":
+                return "UPDATE tab_cripto SET ID_CRIPTO = :ID_Cripto, NOME_CRIPTO = :Nome_Cripto, MKT_CAP_RANK = :MKT_Cap_Rank, SYMBOL = :Symbol WHERE ID_CRIPTO = :ID_Cripto ;";
 
             case "insertCriptoValor":
                 return "INSERT INTO tab_valor VALUES (:ID_Cripto, :CRT_Price, :MKT_Cap, :Total_Volume, CURRENT_TIMESTAMP)";

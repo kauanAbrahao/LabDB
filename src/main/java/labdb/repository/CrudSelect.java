@@ -39,4 +39,19 @@ public class CrudSelect extends DatabaseCrud {
             return null;
         }
     }
+
+    public void updateOne (Criptomoeda criptomoeda){
+        String sql = getSql("updateCriptomoedas");
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("ID_Cripto", criptomoeda.getId());
+        params.addValue("Nome_Cripto", criptomoeda.getNome());
+        params.addValue("MKT_Cap_Rank", criptomoeda.getMktCapRank());
+        params.addValue("Symbol", criptomoeda.getSymbol());
+        try{
+            namedParameterJdbcTemplate.update(sql,params);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
 }
