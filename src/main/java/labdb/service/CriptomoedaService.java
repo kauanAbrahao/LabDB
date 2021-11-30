@@ -25,7 +25,7 @@ public class CriptomoedaService {
 
     public Criptomoeda buscaAcriptomoeda(String id){
         List<Criptomoeda> criptomoeda = crudSelect.getOne(id);
-        return  criptomoeda == null ? null :criptomoeda.get(0);
+        return  criptomoeda.isEmpty() ? null :criptomoeda.get(0);
     }
 
     public void updateCriptomoeda(Criptomoeda criptomoeda){
