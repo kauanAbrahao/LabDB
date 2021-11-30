@@ -35,7 +35,12 @@ public class CriptomoedaController {
     public String updateOrAddCripto(Criptomoeda criptomoeda){
         //TODO
         //service.fazAporraDoInsertOuUpdate();
-        criptomoedaService.updateCriptomoeda(criptomoeda);
+        Criptomoeda exists = criptomoedaService.buscaAcriptomoeda(criptomoeda.getId());
+        if(exists == null){
+            //TODO FAZ SEU INSERT AQUI
+        } else {
+            criptomoedaService.updateCriptomoeda(criptomoeda);
+        }
         return "redirect:/";
     }
 
@@ -43,7 +48,7 @@ public class CriptomoedaController {
     public String editCriptoById(Model model, @PathVariable("id")Optional<String> idCripto){
         if (idCripto.isPresent()){
             //TODO
-            Criptomoeda criptomoeda = criptomoedaService.buscaAcriptomoeda(idCripto);
+            Criptomoeda criptomoeda = criptomoedaService.buscaAcriptomoeda(idCripto.get());
             model.addAttribute("criptomoeda", criptomoeda);
         } else {
             model.addAttribute(new Criptomoeda());
