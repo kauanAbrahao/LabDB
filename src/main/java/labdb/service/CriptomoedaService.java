@@ -31,7 +31,7 @@ public class CriptomoedaService {
         crudSelect.updateOne(criptomoeda);
     }
 
-    public void deleteCriptomoeda(Criptomoeda idCripto){
+    public void deleteCriptomoeda(String idCripto){
         crudSelect.deleteOne(idCripto);
     }
 }

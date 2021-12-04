@@ -53,10 +53,10 @@ public class CrudSelect extends DatabaseCrud {
             e.printStackTrace();
         }
     }
-    public void deleteOne (Criptomoeda criptomoeda) {
+    public void deleteOne (String idCripto) {
         String sql = getSql("deleteCriptoMoeda");
         MapSqlParameterSource params = new MapSqlParameterSource();
-        params.addValue("ID_Cripto", criptomoeda.getId());
+        params.addValue("ID_Cripto", idCripto);
         try {
             namedParameterJdbcTemplate.update(sql, params);
         } catch (Exception e) {
