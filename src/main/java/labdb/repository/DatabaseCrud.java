@@ -96,6 +96,9 @@ public class DatabaseCrud {
             case "getAllCriptoExtremo":
 //                return "SELECT * from tab_extremos where DATE(DataHR_Inc) = :dtRef;";
                 return "SELECT * from tab_extremos where CAST(DataHr_Inc as DATE) = :dtRef;";
+
+            case "deleteCriptoMoeda":
+                return "CALL DELETAR_CRIPTO(:ID_Cripto);";
         }
 
         return null;

@@ -58,9 +58,9 @@ public class CriptomoedaController {
     }
 
     @RequestMapping(path = "/delete/{id}")
-    public String removeCripto(@PathVariable ("id") String idCripto){
-        //TODO
-        //service.removePorId
+    public String removeCripto(@PathVariable ("id") Criptomoeda idCripto){
+
+        criptomoedaService.deleteCriptomoeda(idCripto);
 
         return "redirect:/";
     }
