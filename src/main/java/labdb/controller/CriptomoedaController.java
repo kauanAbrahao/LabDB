@@ -32,12 +32,11 @@ public class CriptomoedaController {
     }
 
     @PostMapping("/addCripto")
-    public String updateOrAddCripto(Criptomoeda criptomoeda){
+    public String addCripto(Criptomoeda criptomoeda){
         //TODO
-        //service.fazAporraDoInsertOuUpdate();
         Criptomoeda exists = criptomoedaService.buscaAcriptomoeda(criptomoeda.getId());
         if(exists == null){
-            //TODO FAZ SEU INSERT AQUI
+            criptomoedaService.addCriptomoeda(criptomoeda);
         } else {
             criptomoedaService.updateCriptomoeda(criptomoeda);
         }
@@ -53,7 +52,6 @@ public class CriptomoedaController {
         } else {
             model.addAttribute(new Criptomoeda());
         }
-
         return "criptomoeda";
     }
 

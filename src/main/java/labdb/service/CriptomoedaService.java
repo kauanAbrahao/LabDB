@@ -27,6 +27,10 @@ public class CriptomoedaService {
         return  criptomoeda.isEmpty() ? null :criptomoeda.get(0);
     }
 
+    public void addCriptomoeda(Criptomoeda criptomoeda){
+        crudSelect.addOne(criptomoeda);
+    }
+
     public void updateCriptomoeda(Criptomoeda criptomoeda){
         crudSelect.updateOne(criptomoeda);
     }

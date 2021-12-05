@@ -4,8 +4,8 @@ Use ModoCripto;
 
 CREATE TABLE TAB_CRIPTO
 (
-    ID_Cripto VARCHAR(20) PRIMARY KEY,
-    Nome_Cripto VARCHAR(20),
+    ID_Cripto VARCHAR(100) PRIMARY KEY,
+    Nome_Cripto VARCHAR(100),
     MKT_Cap_Rank SMALLINT
 );
 
@@ -35,7 +35,7 @@ CREATE TABLE TAB_VALOR_HIST
 
 CREATE TABLE TAB_EXTREMOS
 (
-    ID_Cripto VARCHAR(20),
+    ID_Cripto VARCHAR(100),
     High_Low BOOLEAN,
     Valor DECIMAL,
     DataHR_Inc TIMESTAMP,

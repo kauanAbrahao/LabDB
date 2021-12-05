@@ -11,5 +11,4 @@ public class Criptomoeda {
     String id;
     String nome;
     Integer mktCapRank;
-
 }
